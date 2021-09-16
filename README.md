@@ -97,7 +97,7 @@ Fill this in, we want to write a small receiver that we can send data to using l
 
 ### Grading Criteria 
 
-- Accuracy: The little stuff matters, small mistakes in a parsed bet create bugs that are hard to track down
+- Accuracy: The little stuff matters. Small mistakes in a parsed bet create bugs that are hard to track down.
 
 - Organization and Readability: Our bet parsing engine is continously changing as we add new sports, bet types and attributes. It is essential that our code is easily accessible, logically organized, and well commented. 
 
