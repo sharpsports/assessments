@@ -93,6 +93,10 @@ You can refer to the SharpSports documentation to get more information about the
 
 ### Sending Data to Server
 
+- Install node packages - `npm install`
+- Run mock server - `node app.js`
+- Send bet data to `http://localhost:3200/betSlips`
+
 Fill this in, we want to write a small receiver that we can send data to using localhost
 
 ### Grading Criteria 
