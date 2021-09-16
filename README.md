@@ -11,13 +11,13 @@ Create a `Bot` object whose purpose is to read betting data, parse into an appri
 2) `parseBets` - This method takes a list of betslip data in sportsbook formatting and converts in to a list of dictionaries in SharpSports formatting
 3) `sendBets` - This methods takes a list of SharpSports bet dictionaries and sends it to a given url
 
-You may use any additional function/class methods that you see fit.
+You may use any additional functions/class methods that you see fit.
 
 Finally write an `index.js` file that uses all three methods to complete the parsing task and send the formatted data to the server.
 
 ### Data
 
-Provided is a list of book reference numbers (`betId` in the sportsbook betslip data) and a brief description of each corresponding betslip. The raw data for these betslips is provided in the `betslips.txt`. You can also see how the sportsbook displays each betslip to the user by looking at the images in `betslip_images`. 
+Provided is a list of book reference numbers (`betId` in the sportsbook betslip data) and a brief description of each corresponding betslip. The raw data for these betslips is provided in `betslips.txt`. You can also see how the sportsbook displays each betslip to the user by looking at the images in `betslip_images`. 
 
 All of the betslips have a risk amount of $1, except for bet `FILL THIS IN` which has a risk of $5.55. All of the betslips are pending, you do not need to be concerned with the status, outcome or profit for any betslip.
 
@@ -91,7 +91,7 @@ The data you are given has X betslips, all singles except for one 3-leg parlay, 
 
 You can refer to the SharpSports documentation to get more information about these `BetSlip` and `Bet` attributes. However the documentation is considerably slimmed down for this assessment and the assessment in considered self-contained. 
 
-### Sendind Data to Server
+### Sending Data to Server
 
 Fill this in, we want to write a small receiver that we can send data to using localhost
 
