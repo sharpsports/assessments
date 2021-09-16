@@ -21,32 +21,32 @@ Provided is a list of book reference numbers (`betId` in the sportsbook betslip 
 
 All of the betslips have a risk amount of $1, except for bet `FILL THIS IN` which has a risk of $5.55. All of the betslips are pending, you do not need to be concerned with the status, outcome or profit for any betslip.
 
-**Totals**
-- `16289866`: Colorado Rockies @ Atlanta Braves - Total
-- `16290017`: New York Giants @ Washington Football Team - Total
+**Totals (Straight)**
+- `16289866`: Colorado Rockies @ Atlanta Braves - Full Game Total
+- `16290017`: New York Giants @ Washington Football Team - Full Game Total
 - `16290128`: New York Giants @ Washington Football Team - First Half Total
 
-**Spreads**
+**Spreads (Straight)**
 - `16290095`: New York Giants @ Washington Football Team - First Half Spread
 - Run Lines - both sides of an MLB bet
 - Point Spreads - both sides of an NFL bet
 
-**Moneylines**
+**Moneylines (Straight)**
 - `16290489`: 3-leg moneyline parlay (New York Yankees @ Baltimore Orioles, St. Louis Cardinals @ New York Mets,Colorado Rockies @ Atlanta Braves)
 
-**Player Totals (Props)**
+**Player Totals (Prop)**
 - `16290304`: Jose Urquidy Player Strikeouts Total
 - `16290192`: Taylor Heinicke Player Passing Yards Total
 - `16290219`: Terry McLauren Player Recieveing Yards Total
 
-
-**Futures**
+**Unhandled Bets**
 - `16290418`: Kansas City Cheifs Superbowl Future
-
+- First touchdown scorer prop
+- Some other weird prop
 
 ### Parsing
 
-Note: A betslip contains accounting information of a wager and may contain several bets/legs that make up the wager as a whole. Bet and leg can be used interchangably; the sportsbook calls it a leg and SharpSports calls it a bet. From here on out we will only refer to betslips and associated bets. 
+A betslip contains accounting information of a wager and may contain several bets/legs that make up the wager as a whole. Bet and leg can be used interchangably; the sportsbook calls it a leg and SharpSports calls it a bet. From here on out we will only refer to betslips and associated bets. 
 
 The goal of the `parseBets` function is to take the raw data provided and translate each bet of each betslip in the list to a dictionary with the following values:
 
@@ -65,7 +65,6 @@ The goal of the `parseBets` function is to take the raw data provided and transl
 
 - `betType`: Either `straight` or `prop`. The only prop bets should be the Player Total Bets
 
-
 **Bet Attibutes**
 
 - `eventName`: A string descriptor of the event, formatted as `Away Team @ Home Team`
@@ -74,7 +73,7 @@ The goal of the `parseBets` function is to take the raw data provided and transl
 
 - `position`: The side of a wager the bettor is taking against the book. In the case of a `total`, the position would be `over` or `under`, while in the case of a `spread` or `moneyline` the position would be a team.
 
-- `segment`: This represents the specific half, quarter, or other specific segment of the event that the bet is based on
+- `segment`: This represents the specific half, quarter, or other specific segment of the event that the bet is based on. This is null if the bet is on the whole game.
 
 - `line`: The line set by the sportsbook for this particular bet. In the case of a `total` or `spread` this will contain a float, otherwise it will be null.
 
@@ -86,24 +85,22 @@ The goal of the `parseBets` function is to take the raw data provided and transl
 
 - `incomplete`: Should be `False` if the bet is fully handled and parsed by our parsing engine, and `True` otherwise. If the bet is incomplete then all the bet attributes besides this should be `null` and the the betSlip attributes should be filled in. 
 
-You are only tasked with building a parsing engine for straight bets (spreads, moneylines and totals) as well as player total prop bets. These types of bets should be fully parsed with `incomplete = False`. All other types of bets (including the future bet provided) should have `incomplete = True` and should have null values for all bet attributes.
+You are only tasked with building a parsing engine for straight bets (spreads, moneylines and totals) as well as player total prop bets. These types of bets should be fully parsed with `incomplete = False`. All other types of bets should have `incomplete = True` and should have null values for all bet attributes.
 
-The data you are given has X betslip all singles except for one 3-leg parlay, so the result of the parsing should be X+2 bet dictionaries. The betslip information in each dictionary will be repeated if there are multiple bets/legs associated with the slip (in this case just the parlay).
+The data you are given has X betslips, all singles except for one 3-leg parlay, so the result of the parsing should be X+2 bet dictionaries. The betslip information in each dictionary will be repeated if there are multiple bets/legs associated with the slip (in this case just the parlay).
 
 You can refer to the SharpSports documentation to get more information about these `BetSlip` and `Bet` attributes. However the documentation is considerably slimmed down for this assessment and the assessment in considered self-contained. 
 
-### Areas of Focus
+### Sendind Data to Server
 
-    - Organization and Readability: Details
-    - Generalizability: Want it to work on other data sets
-    - Error Handling: Would prefer incomplete bets to bad data
+Fill this in, we want to write a small receiver that we can send data to using localhost
 
+### Grading Criteria 
 
+    - Accuracy: The little stuff matters, small mistakes in a parsed bet create bugs that are hard to track down
 
-BACT_af4d54da94d34a28a3d99515a322da9f
-7002202 - Total (NBA, Segmented)
+    - Organization and Readability: Our bet parsing engine is continously changing as we add new sports, bet types and attributes. It is essential that our code is easily accessible, logically organized, and well commented. 
 
+    - Generalizability: We have only provided a small sample of bets. Not only should your code fully parse the given straight bets and player props, but it should also be built to parse other simliar bets. We are constantly dealing with new bet types and formats that we have never seen before. Try to write code that will label bets that are not straight bets or player props as incomplete; we dont want to put bad data in the bet attributes if the bet is not currently handled. We will test your code on a larger sample of test bets and see how it performs.
 
-
-
-6285705 - Future (MLB)
+    - Error Handling: Sometimes we receive bad data from the sportsbook. You dont want the parser to break if it is provided with bad data. Also use proper error handling for any API calls.
