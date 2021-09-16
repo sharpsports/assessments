@@ -97,8 +97,6 @@ You can refer to the SharpSports documentation to get more information about the
 - Run mock server - `node app.js`
 - Send bet data to `http://localhost:3200/betSlips`
 
-Fill this in, we want to write a small receiver that we can send data to using localhost
-
 ### Grading Criteria 
 
 - Accuracy: The little stuff matters. Small mistakes in a parsed bet create bugs that are hard to track down.
