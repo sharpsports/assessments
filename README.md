@@ -103,4 +103,4 @@ Fill this in, we want to write a small receiver that we can send data to using l
 
 - Generalizability: We have only provided a small sample of bets. Not only should your code fully parse the given straight bets and player props, but it should also be built to parse other simliar bets. We are constantly dealing with new bet types and formats that we have never seen before. Try to write code that will label bets that are not straight bets or player props as incomplete; we dont want to put bad data in the bet attributes if the bet is not currently handled. We will test your code on a larger sample of test bets and see how it performs.
 
-- Error Handling: Sometimes we receive bad data from the sportsbook. You dont want the parser to break if it is provided with bad data. Also use proper error handling for any API calls.
+- Error Handling: Sometimes we receive bad data from the sportsbook. You dont want the parser to break for all the data if it is provided with a single bad betslip. Also use proper error handling for any API calls.
