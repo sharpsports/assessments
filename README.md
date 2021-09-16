@@ -1,5 +1,5 @@
 # Assessments
-Coding assessments for new hires
+Coding assessments
 
 ## Book Integrations Assessment
 
@@ -17,7 +17,7 @@ Finally write an `index.js` file that uses all three methods to complete the par
 
 ### Data
 
-Provided is a list of book reference numbers (`betId` in the sportsbook betslip data) and a brief description of each corresponding betslip. The raw data for these betslips is provided in `betslips.txt`. You can also see how the sportsbook displays each betslip to the user by looking at the images in `betslip_images`. 
+Provided is a list of book reference numbers (`betId` in the sportsbook betslip data) and a brief description of each corresponding betslip. The raw data for these betslips is provided in `betslips.txt`. You can also see how the sportsbook displays each betslip to the user by looking at the images in `betslip_images`. You should use some sort of json formatter to more easily view the raw betslip data.
 
 All of the betslips have a risk amount of $1, except for bet `FILL THIS IN` which has a risk of $5.55. All of the betslips are pending, you do not need to be concerned with the status, outcome or profit for any betslip.
 
@@ -25,24 +25,30 @@ All of the betslips have a risk amount of $1, except for bet `FILL THIS IN` whic
 - `16289866`: Colorado Rockies @ Atlanta Braves - Full Game Total
 - `16290017`: New York Giants @ Washington Football Team - Full Game Total
 - `16290128`: New York Giants @ Washington Football Team - First Half Total
+- `16359572`: New York Giants @ Washington Football Team - Third Quarter Total
 
 **Spreads (Straight)**
-- `16290095`: New York Giants @ Washington Football Team - First Half Spread
-- Run Lines - both sides of an MLB bet
-- Point Spreads - both sides of an NFL bet
+- `16290095`: New York Giants @ Washington Football Team - New York Giants First Half Point Spread
+- `16351056`: New York Giants @ Washington Football Team - Washington Football Team Full Game Point Spread
+- `16351055`: New York Giants @ Washington Football Team - New York Giants Full Game Point Spread
+- `16351267`: Cincinnati Reds @ Pittsburg Pirates - Cincinnati Reds Full Game Run Line
+- `16351266`: Cincinnati Reds @ Pittsburg Pirates - Pittsburg Pirates Full Game Run Line
 
 **Moneylines (Straight)**
 - `16290489`: 3-leg moneyline parlay (New York Yankees @ Baltimore Orioles, St. Louis Cardinals @ New York Mets,Colorado Rockies @ Atlanta Braves)
+- `16289983`: New York Giants @ Washington Football Team - Washington Football Team Full game moneyline
+
 
 **Player Totals (Prop)**
 - `16290304`: Jose Urquidy Player Strikeouts Total
 - `16290192`: Taylor Heinicke Player Passing Yards Total
+- `16351423`: Taylor Heinicke Player Player Passing Yards Total (Alternate)
 - `16290219`: Terry McLauren Player Recieveing Yards Total
 
 **Unhandled Bets**
 - `16290418`: Kansas City Cheifs Superbowl Future
-- First touchdown scorer prop
-- Some other weird prop
+- `16351347`: Anytime touchdown scorer
+- `16351560`: Jorge Soler to hit a home run
 
 ### Parsing
 
@@ -75,7 +81,7 @@ The goal of the `parseBets` function is to take the raw data provided and transl
 
 - `segment`: This represents the specific half, quarter, or other specific segment of the event that the bet is based on. This is null if the bet is on the whole game.
 
-- `line`: The line set by the sportsbook for this particular bet. In the case of a `total` or `spread` this will contain a float, otherwise it will be null.
+- `line`: The line/handicap set by the sportsbook for this particular bet. In the case of a `total` or `spread` this will contain a float, otherwise it will be null.
 
 - `betOddsAmerican`: The odds of the individual bet
 
