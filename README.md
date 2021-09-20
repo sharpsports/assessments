@@ -5,7 +5,7 @@ Coding assessments
 
 ### Overview
 
-Create a `Bot` object whose purpose is to read betting data, parse into an appripriate format and send to a server. Your Bot is required to have 3 methods
+Create a `Bot` object whose purpose is to read betting data, parse into an appropriate format and send to a server. Your Bot is required to have 3 methods
 
 1) `readBets` - This methods reads a file containing betslip data in sportsbook formatting
 2) `parseBets` - This method takes a list of betslip data in sportsbook formatting and converts in to a list of dictionaries in SharpSports formatting
