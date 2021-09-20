@@ -25,7 +25,7 @@ Finally write an `index.js` file that uses all three methods to complete the par
 
 Provided is a list of book reference numbers (`betId` in the sportsbook betslip data) and a brief description of each corresponding betslip. The raw data for these betslips is provided in `betslips.txt`. You can also see how the sportsbook displays each betslip to the user by looking at the images in `betslip_images`. You should use some sort of json formatter to more easily view the raw betslip data.
 
-All of the betslips have a risk amount of $1, except for bet `FILL THIS IN` which has a risk of $5.55. All of the betslips are pending, you do not need to be concerned with the status, outcome or profit for any betslip.
+All of the betslips have a risk amount of $1, except for bet `16351267` which has a risk of $5.55. All of the betslips are pending, you do not need to be concerned with the status, outcome or profit for any betslip.
 
 **Totals (Straight)**
 - `16289866`: Colorado Rockies @ Atlanta Braves - Full Game Total
