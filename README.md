@@ -75,9 +75,9 @@ The goal of the `parseBets` function is to take the raw data provided and transl
 
 - `toWin`: The max amount of money (in cents) that will be paid out to the bettor for this betslip
 
-- `betType`: Either `straight` or `prop`. The only prop bets should be the Player Total Bets
-
 **Bet Attibutes**
+
+- `betType`: Either `straight` or `prop`. The only prop bets should be the Player Total Bets
 
 - `eventName`: A string descriptor of the event, formatted as `Away Team @ Home Team`
 
