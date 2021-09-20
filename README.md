@@ -15,6 +15,12 @@ You may use any additional functions/class methods that you see fit.
 
 Finally write an `index.js` file that uses all three methods to complete the parsing task and send the formatted data to the server.
 
+
+### Requirements
+
+- Please install node version 12.X or higher
+- Install requirements using `npm install`
+
 ### Data
 
 Provided is a list of book reference numbers (`betId` in the sportsbook betslip data) and a brief description of each corresponding betslip. The raw data for these betslips is provided in `betslips.txt`. You can also see how the sportsbook displays each betslip to the user by looking at the images in `betslip_images`. You should use some sort of json formatter to more easily view the raw betslip data.
