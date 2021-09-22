@@ -176,7 +176,7 @@ Note: This is just a single bet associated with a larger parlay betslip. There s
 
 - Install node packages - `npm install`
 - Run mock server - `node app.js`
-- Send bet data to `http://localhost:3200/betSlips`
+- Send bet data (a list of bet dictionaries/objects) to `http://localhost:3200/betSlips`
 
 ### Grading Criteria 
 
