@@ -128,7 +128,7 @@ You can refer to the SharpSports documentation to get more information about the
 
 **Parlay**
 
-Note: This is just a single bet associated with a larger parlay betslip. There should be one bet object similar to this example for each bet in a parlay.
+Note: This is just a single bet associated with a larger parlay betslip. There should be one bet object similar to this example for each bet in a parlay (all with the same `bookRef`).
 
 ```
 {
