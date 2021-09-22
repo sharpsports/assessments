@@ -159,7 +159,7 @@ Note: This is just a single bet associated with a larger parlay betslip. There s
     "slipOddsAmerican": -150,
     "atRisk": 300,
     "toWin": 200,
-    "betType": "straight",
+    "betType": null,
     "eventName": null,
     "proposition": null,
     "position": null,
