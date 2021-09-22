@@ -103,6 +103,75 @@ The data you are given has X betslips, all singles except for one 3-leg parlay, 
 
 You can refer to the SharpSports documentation to get more information about these `BetSlip` and `Bet` attributes. However the documentation is considerably slimmed down for this assessment and the assessment in considered self-contained. 
 
+#### Examples
+
+**Single**
+```
+{
+    "bookRef":"123456",
+    "slipType":"single",
+    "slipOddsAmerican": -110,
+    "atRisk": 220,
+    "toWin": 200,
+    "betType": "straight",
+    "eventName": "Los Angeles Lakers @ Washington Wizards,
+    "proposition": "spread",
+    "position": "Washington Wizards",
+    "segment": null,
+    "line": 4.5,
+    "betOddsAmerican": -110,
+    "player": null,
+    "metric": null,
+    "incomplete": false
+}
+```
+
+**Parlay**
+
+Note: This is just a single bet associated with a larger parlay betslip. There should be one bet object similar to this example for each bet in a parlay.
+
+```
+{
+    "bookRef":"123457",
+    "slipType":"parlay",
+    "slipOddsAmerican": 340,
+    "atRisk": 100,
+    "toWin": 340,
+    "betType": "straight",
+    "eventName": "Los Angeles Lakers @ Washington Wizards,
+    "proposition": "total",
+    "position": "over",
+    "segment": "1st Quarter",
+    "line": 55.5,
+    "betOddsAmerican": -110,
+    "player": null,
+    "metric": null,
+    "incomplete": false
+}
+```
+
+**Incomplete Bet**
+
+```
+{
+    "bookRef":"123458",
+    "slipType":"single",
+    "slipOddsAmerican": -150,
+    "atRisk": 300,
+    "toWin": 200,
+    "betType": "straight",
+    "eventName": null,
+    "proposition": null,
+    "position": null,
+    "segment": null,
+    "line": null,
+    "betOddsAmerican": null,
+    "player": null,
+    "metric": null,
+    "incomplete": true
+}
+```
+
 ### Sending Data to Server
 
 - Install node packages - `npm install`
